@@ -16,11 +16,12 @@ Including another URLconf
 from django.conf.urls import include, url, patterns
 from django.contrib import admin
 from mysite.views import hello, my_home_page_view, \
-    current_datetime
+    current_datetime, hours_ahead
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^hello/$', hello),
     url(r'^datetime/$', current_datetime),
-    url(r'^$', my_home_page_view)
+    url(r'^$', my_home_page_view),
+    url(r'^time/plus/(\d{1,2})/$', hours_ahead)
 ]
